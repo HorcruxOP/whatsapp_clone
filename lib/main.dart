@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const ChatView(),
+      home: const HomeView(),
       themeMode: ThemeMode.dark,
       darkTheme: ThemeData(
         colorScheme: const ColorScheme.dark(),
