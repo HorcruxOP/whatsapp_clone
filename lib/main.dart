@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:whatsapp_clone/screens/home_view.dart';
+import 'package:whatsapp_clone/screens/main_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,11 +12,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomeView(),
-      themeMode: ThemeMode.dark,
-      darkTheme: ThemeData(
-        colorScheme: const ColorScheme.dark(),
-        primaryColor: Colors.white,
+      home: const MainPage(),
+      themeMode: ThemeMode.system,
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
       ),
     );
   }

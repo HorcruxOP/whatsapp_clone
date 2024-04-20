@@ -9,7 +9,11 @@ class ChatView extends StatelessWidget {
       appBar: AppBar(
         leading: Row(
           children: [
-            IconButton(icon: const Icon(Icons.arrow_back), onPressed: () {}),
+            IconButton(
+                icon: const Icon(Icons.arrow_back),
+                onPressed: () {
+                  Navigator.pop(context);
+                }),
             // CircleAvatar()
           ],
         ),
