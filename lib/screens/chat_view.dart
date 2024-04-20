@@ -9,11 +9,11 @@ class ChatView extends StatelessWidget {
       appBar: AppBar(
         leading: Row(
           children: [
-            IconButton(icon: Icon(Icons.arrow_back), onPressed: () {}),
+            IconButton(icon: const Icon(Icons.arrow_back), onPressed: () {}),
             // CircleAvatar()
           ],
         ),
-        title: Text("name"),
+        title: const Text("name"),
         actions: [
           IconButton(
             onPressed: () {},
@@ -35,7 +35,7 @@ class ChatView extends StatelessWidget {
           ),
         ],
       ),
-      body: Stack(
+      body: const Stack(
         children: [],
       ),
     );

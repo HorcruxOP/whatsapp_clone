@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:whatsapp_clone/widgets/chat_list.dart';
 
 class HomeView extends StatelessWidget {
@@ -35,13 +34,13 @@ class HomeView extends StatelessWidget {
                 decoration: InputDecoration(
                   prefixIcon: const Icon(Icons.search, color: Colors.grey),
                   filled: true,
-                  fillColor: Color.fromARGB(255, 29, 28, 28),
+                  fillColor: const Color.fromARGB(255, 29, 28, 28),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey),
+                    borderSide: const BorderSide(color: Colors.grey),
                     borderRadius: BorderRadius.circular(30),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey),
+                    borderSide: const BorderSide(color: Colors.grey),
                     borderRadius: BorderRadius.circular(30),
                   ),
                   hintText: "Search...",
