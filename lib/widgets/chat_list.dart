@@ -20,7 +20,11 @@ class ChatList extends StatelessWidget {
     return ListTile(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => const ChatView()));
+            context,
+            MaterialPageRoute(
+                builder: (context) => ChatView(
+                      name: name,
+                    )));
       },
       leading: CircleAvatar(
         foregroundImage: AssetImage(profile),
