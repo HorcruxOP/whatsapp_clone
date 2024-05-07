@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/screens/info_screen.dart';
 
 class ChatView extends StatelessWidget {
   const ChatView({required this.name, super.key});
@@ -7,40 +8,70 @@ class ChatView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: Row(
-          children: [
-            IconButton(
-                icon: const Icon(Icons.arrow_back),
-                onPressed: () {
-                  Navigator.pop(context);
-                }),
-            // CircleAvatar()
-          ],
+      appBar: PreferredSize(
+        preferredSize: const Size(double.infinity, 100),
+        child: SafeArea(
+          child: Container(
+            padding: const EdgeInsets.all(10),
+            color: Colors.white,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    GestureDetector(
+                        child: const Icon(Icons.arrow_back),
+                        onTap: () {
+                          Navigator.pop(context);
+                        }),
+                    const CircleAvatar(),
+                    const SizedBox(width: 10),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const InfoScreen(),
+                            ));
+                      },
+                      child: Text(
+                        name,
+                        style: const TextStyle(fontSize: 20),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.video_call,
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.phone_outlined,
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.more_vert,
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
         ),
-        title: Text(name),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.video_call,
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.phone_outlined,
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.more_vert,
-            ),
-          ),
-        ],
       ),
+
+      // appBar: AppBar(
+      //   backgroundColor: Colors.white,
+
       body: SizedBox(
         height: double.infinity,
         width: double.infinity,

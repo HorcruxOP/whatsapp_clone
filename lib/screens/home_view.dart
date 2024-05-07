@@ -3,7 +3,7 @@ import 'package:whatsapp_clone/userdata.dart';
 import 'package:whatsapp_clone/widgets/chat_list.dart';
 
 class HomeView extends StatelessWidget {
-  HomeView({super.key});
+  const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +95,7 @@ class HomeView extends StatelessWidget {
                   decoration: InputDecoration(
                     prefixIcon: const Icon(Icons.search, color: Colors.grey),
                     filled: true,
-                    fillColor: Color.fromARGB(255, 236, 236, 236),
+                    fillColor: const Color.fromARGB(255, 236, 236, 236),
                     enabledBorder: OutlineInputBorder(
                       borderSide: const BorderSide(style: BorderStyle.none),
                       borderRadius: BorderRadius.circular(30),
@@ -128,35 +128,33 @@ class HomeView extends StatelessWidget {
             ),
             InkWell(
               onTap: () {},
-              child: Padding(
-                padding: const EdgeInsets.all(20),
-                child: Container(
-                  child: const Row(
-                    children: [
-                      Icon(
-                        Icons.archive_outlined,
-                        size: 30,
+              child: const Padding(
+                padding: EdgeInsets.all(20),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.archive_outlined,
+                      size: 30,
+                    ),
+                    SizedBox(
+                      width: 25,
+                    ),
+                    Text(
+                      "Archived",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
                       ),
-                      SizedBox(
-                        width: 25,
+                    ),
+                    Spacer(),
+                    Text(
+                      "39",
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: Color(0xFF1DA75E),
                       ),
-                      Text(
-                        "Archived",
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Spacer(),
-                      Text(
-                        "39",
-                        style: TextStyle(
-                          fontSize: 13,
-                          color: Color(0xFF1DA75E),
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ),
