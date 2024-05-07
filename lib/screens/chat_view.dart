@@ -31,12 +31,17 @@ class ChatView extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const InfoScreen(),
+                              builder: (context) => InfoScreen(
+                                name: name,
+                              ),
                             ));
                       },
-                      child: Text(
-                        name,
-                        style: const TextStyle(fontSize: 20),
+                      child: SizedBox(
+                        width: 150,
+                        child: Text(
+                          name,
+                          style: const TextStyle(fontSize: 20),
+                        ),
                       ),
                     ),
                   ],

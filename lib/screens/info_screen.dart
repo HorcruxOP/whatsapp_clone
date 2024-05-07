@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class InfoScreen extends StatelessWidget {
-  const InfoScreen({super.key});
+  const InfoScreen({super.key, required this.name});
+  final String name;
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +40,8 @@ class InfoScreen extends StatelessWidget {
                         const CircleAvatar(
                           radius: 60,
                         ),
-                        const Text(
-                          "Bhupender",
+                        Text(
+                          name,
                           style: TextStyle(fontSize: 25),
                         ),
                         const Text(

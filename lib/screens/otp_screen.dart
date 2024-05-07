@@ -6,9 +6,9 @@ class OtpScreen extends StatefulWidget {
   final String verificationId;
 
   const OtpScreen({
-    Key? key,
+    super.key,
     required this.verificationId,
-  }) : super(key: key);
+  });
 
   @override
   _OtpScreenState createState() => _OtpScreenState();
@@ -38,18 +38,19 @@ class _OtpScreenState extends State<OtpScreen> {
                     verificationId: widget.verificationId,
                     smsCode: otpController.text,
                   );
-                  // Sign in the user with the credential
-                  UserCredential userCredential =
-                      await FirebaseAuth.instance.signInWithCredential(credential);
-                  // Navigate to main page upon successful sign-in
+                  
+                  UserCredential userCredential = await FirebaseAuth.instance
+                      .signInWithCredential(credential);
+                 
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => const MainPage()),
+                    MaterialPageRoute(
+                      builder: (context) => const MainPage(),
+                    ),
                   );
                 } catch (e) {
                   print(e.toString());
-                  // Handle sign-in errors
-                  // For example, display a snackbar with the error message
+                  
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text('Failed to sign in: ${e.toString()}'),

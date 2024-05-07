@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/screens/settings_screen.dart';
 import 'package:whatsapp_clone/userdata.dart';
 import 'package:whatsapp_clone/widgets/chat_list.dart';
 
@@ -70,9 +71,16 @@ class HomeView extends StatelessWidget {
                   ),
                 ),
               ),
-              const PopupMenuItem(
+               PopupMenuItem(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SettingsScreen(),
+                      ));
+                },
                 value: 5,
-                child: Text(
+                child: const Text(
                   "Settings",
                   style: TextStyle(
                     fontSize: 17,
