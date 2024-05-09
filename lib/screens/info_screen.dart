@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class InfoScreen extends StatelessWidget {
-  const InfoScreen({super.key, required this.name});
-  final String name;
+  const InfoScreen({super.key, required this.name, required this.image});
+  final String name, image;
 
   @override
   Widget build(BuildContext context) {
@@ -30,15 +30,14 @@ class InfoScreen extends StatelessWidget {
                       right: 5,
                       child: IconButton(
                         icon: const Icon(Icons.more_vert),
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
+                        onPressed: () {},
                       ),
                     ),
                     Column(
                       children: [
-                        const CircleAvatar(
+                        CircleAvatar(
                           radius: 60,
+                          foregroundImage: NetworkImage(image),
                         ),
                         Text(
                           name,
@@ -62,8 +61,14 @@ class InfoScreen extends StatelessWidget {
                               ),
                               child: const Column(
                                 children: [
-                                  Icon(Icons.call_outlined),
-                                  Text("Audio"),
+                                  Icon(
+                                    Icons.call_outlined,
+                                    size: 25,
+                                    color: Colors.green,
+                                  ),
+                                  Text(
+                                    "Audio",
+                                  ),
                                 ],
                               ),
                             ),
@@ -77,8 +82,12 @@ class InfoScreen extends StatelessWidget {
                               ),
                               child: const Column(
                                 children: [
-                                  Icon(Icons.call_outlined),
-                                  Text("Audio"),
+                                  Icon(
+                                    Icons.video_call_outlined,
+                                    size: 25,
+                                    color: Colors.green,
+                                  ),
+                                  Text("Video"),
                                 ],
                               ),
                             ),
@@ -92,8 +101,12 @@ class InfoScreen extends StatelessWidget {
                               ),
                               child: const Column(
                                 children: [
-                                  Icon(Icons.call_outlined),
-                                  Text("Audio"),
+                                  Icon(
+                                    Icons.money_outlined,
+                                    size: 25,
+                                    color: Colors.green,
+                                  ),
+                                  Text("Pay"),
                                 ],
                               ),
                             ),
@@ -107,8 +120,12 @@ class InfoScreen extends StatelessWidget {
                               ),
                               child: const Column(
                                 children: [
-                                  Icon(Icons.call_outlined),
-                                  Text("Audio"),
+                                  Icon(
+                                    Icons.search_outlined,
+                                    size: 25,
+                                    color: Colors.green,
+                                  ),
+                                  Text("Search"),
                                 ],
                               ),
                             ),

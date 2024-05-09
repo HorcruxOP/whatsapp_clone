@@ -38,10 +38,10 @@ class _OtpScreenState extends State<OtpScreen> {
                     verificationId: widget.verificationId,
                     smsCode: otpController.text,
                   );
-                  
+
                   UserCredential userCredential = await FirebaseAuth.instance
                       .signInWithCredential(credential);
-                 
+
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
@@ -50,7 +50,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   );
                 } catch (e) {
                   print(e.toString());
-                  
+
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text('Failed to sign in: ${e.toString()}'),

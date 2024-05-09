@@ -24,10 +24,11 @@ class ChatList extends StatelessWidget {
             MaterialPageRoute(
                 builder: (context) => ChatView(
                       name: name,
+                      image: profile,
                     )));
       },
       leading: CircleAvatar(
-        foregroundImage: AssetImage(profile),
+        foregroundImage: NetworkImage(profile),
       ),
       title: Text(name),
       subtitle: Text(

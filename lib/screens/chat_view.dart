@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/screens/info_screen.dart';
 
 class ChatView extends StatelessWidget {
-  const ChatView({required this.name, super.key});
-  final String name;
+  const ChatView({required this.name, super.key, required this.image});
+  final String name,image;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class ChatView extends StatelessWidget {
                         onTap: () {
                           Navigator.pop(context);
                         }),
-                    const CircleAvatar(),
+                     CircleAvatar(foregroundImage: NetworkImage(image),),
                     const SizedBox(width: 10),
                     GestureDetector(
                       onTap: () {
@@ -33,6 +33,7 @@ class ChatView extends StatelessWidget {
                             MaterialPageRoute(
                               builder: (context) => InfoScreen(
                                 name: name,
+                                image:image,
                               ),
                             ));
                       },
